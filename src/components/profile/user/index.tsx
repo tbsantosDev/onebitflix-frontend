@@ -92,7 +92,7 @@ const UserForm = function () {
               name="firstName"
               type="text"
               id="firstName"
-              placeHolder="Qual o seu primeiro nome?"
+              placeholder="Qual o seu primeiro nome?"
               required
               maxLength={20}
               className={styles.inputFlex}
@@ -108,7 +108,7 @@ const UserForm = function () {
               name="lastName"
               type="text"
               id="lastName"
-              placeHolder="Qual o seu sobrenome?"
+              placeholder="Qual o seu sobrenome?"
               required
               maxLength={20}
               className={styles.inputFlex}
@@ -126,7 +126,7 @@ const UserForm = function () {
               name="phone"
               type="tel"
               id="phone"
-              placeHolder="(xx) 9xxxx-xxxx"
+              placeholder="(xx) 9xxxx-xxxx"
               required
               className={styles.input}
               value={phone}
@@ -141,7 +141,7 @@ const UserForm = function () {
               name="email"
               type="email"
               id="email"
-              placeHolder="Coloque o seu e-mail"
+              placeholder="Coloque o seu e-mail"
               required
               className={styles.input}
               value={email}
