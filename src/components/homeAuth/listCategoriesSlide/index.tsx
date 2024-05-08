@@ -2,6 +2,7 @@ import styles from "../../../styles/slideCategoty.module.scss";
 import SlideComponent from "@/components/common/slideComponent";
 import useSWR from "swr";
 import categoriesService from "@/services/categoriesService";
+import PageSpinner from "@/components/common/spinner";
 
 
 interface props {
@@ -14,12 +15,9 @@ const ListCategoriesSlide = function ({ categoryId, categoryName }: props) {
 );
 
   if (error) return error;
-  if (!data)
-    return (
-      <>
-        <p>Loading...</p>
-      </>
-    );
+  if (!data) {
+    return <PageSpinner />
+  }
 
   return (
     <>
