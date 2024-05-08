@@ -55,32 +55,50 @@ const courseService = {
       .catch((error) => {
         return error.response;
       });
-      return res
+    return res;
   },
   removeFav: async (courseId: number | string) => {
-    const token = sessionStorage.getItem("onebitflix-token")
+    const token = sessionStorage.getItem("onebitflix-token");
 
-    const res = await api.delete("/favorites", {
+    const res = await api
+      .delete("/favorites", {
         headers: {
-            Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${token}`,
         },
-        data: { courseId }
-    }).catch((error) => {
-        return error.response
-    })
-    return res
+        data: { courseId },
+      })
+      .catch((error) => {
+        return error.response;
+      });
+    return res;
   },
   getFavCourses: async () => {
-    const token = sessionStorage.getItem("onebitflix-token")
+    const token = sessionStorage.getItem("onebitflix-token");
 
-    const res = await api.get("/favorites", {
+    const res = await api
+      .get("/favorites", {
         headers: {
-            Authorization: `Bearer ${token}`
-        }
-    }).catch((error) => {
-        return error.response
-    })
-    return res
-  }
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .catch((error) => {
+        return error.response;
+      });
+    return res;
+  },
+  getSearch: async (name: string) => {
+    const token = sessionStorage.getItem("onebitflix-token");
+
+    const res = await api
+      .get(`/courses/search?name=${name}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .catch((error) => {
+        return error.response;
+      });
+    return res;
+  },
 };
 export default courseService;
