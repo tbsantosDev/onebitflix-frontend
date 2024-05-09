@@ -1,0 +1,17 @@
+@import "../styles/colors.module.scss";
+.main{
+    display: flex;
+    flex-direction: column;
+}
+.searchResult{
+    flex: 1 0 auto;
+}
+.noSearchResult {
+    text-align: center;
+    padding: 70px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.headFooterBg {
+    background-color: black;
+}
