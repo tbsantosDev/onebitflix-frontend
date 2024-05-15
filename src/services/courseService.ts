@@ -10,6 +10,7 @@ export type EpisodeType = {
 };
 
 export type CourseType = {
+  [x: string]: any;
   id: number;
   name: string;
   thumbnailUrl: string;
@@ -61,11 +62,10 @@ const courseService = {
     const token = sessionStorage.getItem("onebitflix-token");
 
     const res = await api
-      .delete("/favorites", {
+      .delete(`/favorites/${courseId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-        data: { courseId },
       })
       .catch((error) => {
         return error.response;

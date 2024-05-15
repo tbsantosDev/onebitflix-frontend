@@ -34,7 +34,7 @@ const FeaturedSection = function () {
               <p className={styles.description}>{course.synopsis}</p>
               <Link
                 style={{ textDecoration: "none" }}
-                href={`/courses/${course.id}`}
+                href={`/course/${course.id}`}
               >
                 <Button outline color="light" className={styles.button}>
                   ACESSE AGORA!
